@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>RASPMEDIA LO PETA</title>
+
+		<script src="../build/jquery.js"></script>	
+		<script src="../build/mediaelement-and-player.min.js"></script>
+		<link rel="stylesheet" href="../build/mediaelementplayer.min.css" />
+		<style>
+		.center{
+			margin: auto;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+		}
+		</style>
+	</head>
+
+	<body bgcolor="#000000"> 
+
+		<video width="640" height="360" src="../../media/video/sample1.mp4" type="video/mp4" id="videoplayer" controls="controls" preload="none" class="center"></video>
+
+		<script>
+
+			var player = new MediaElementPlayer('#videoplayer',{
+				startVolume: 0.5
+			});
+
+			var event1 = new Event("start");
+			var event2 = new Event("fullscreen");
+
+
+			document.addEventListener("start", function() {
+			    player.play();
+			}, false);
+			document.addEventListener("fullscreen", function() {
+			    player.enterFullScreen();
+			}, false);
+
+			document.dispatchEvent(event1);
+			document.dispatchEvent(event2);
+
+		</script>
+
+	</body>
+</html>
