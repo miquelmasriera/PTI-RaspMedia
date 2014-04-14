@@ -12,6 +12,13 @@
     <li>server : <em>código de la aplicación servidor</em></li>
     <li>media : <em>directorio con subdirectorios para archivos multimedia (si no existe lo crea el server)</em></li>
   </ul>
+  
+  <p>Software necesario </p>
+  <ul>
+    <li>express 3.X (node.js --> npm install express)</li>
+    <li>ffmapeg (linux --> sudo apt-get install ffmpeg) </li>
+    <li>chromium</li>
+  </ul>
 </body>
 </html>
 
