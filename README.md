@@ -16,8 +16,8 @@
   <p>Software necesario </p>
   <ul>
     <li>express 3.X (node.js --> npm install express)</li>
-    <li>ffmpeg (linux --> sudo apt-get install ffmpeg) </li>
-    <li>chromium</li>
+    <li>ffmpeg (Raspbian --> sudo apt-get install ffmpeg) </li>
+    <li>chromium (Raspbian --> sudo apt-get install chromium)</li>
   </ul>
 </body>
 </html>
