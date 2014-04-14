@@ -6,6 +6,12 @@
 =============
   
   <p>Proyecto de la Asginatura PTI de la FIB</p>
+  <p>Directorios :</p>
+  <ul>
+    <li>player : <em>reproductor de archivos</em></li>
+    <li>server : <em>código de la aplicación servidor</em></li>
+    <li>media : <em>carpeta con los archivos multimedia (si no existe la crea el server)</em></li>
+  </ul>
 </body>
 </html>
 
