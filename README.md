@@ -10,7 +10,7 @@
   <ul>
     <li>player : <em>reproductor de archivos</em></li>
     <li>server : <em>código de la aplicación servidor</em></li>
-    <li>media : <em>carpeta con los archivos multimedia (si no existe la crea el server)</em></li>
+    <li>media : <em>directorio con subdirectorios para archivos multimedia (si no existe lo crea el server)</em></li>
   </ul>
 </body>
 </html>
