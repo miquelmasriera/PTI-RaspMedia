@@ -15,9 +15,19 @@
   
   <p>Software necesario </p>
   <ul>
-    <li>express 3.X (node.js --> npm install express)</li>
+    <li> node.js (v10.26)
+      <ul>
+        <li>express 3.5.1</li>
+        <li>socket.io 0.9</li>
+        <li>imagemagick</li>
+        <li>musicmetadata</li>
+        <li>base64</li>
+      </ul>
+    </li>
     <li>ffmpeg (Raspbian --> sudo apt-get install ffmpeg) </li>
+    <li>WEB former epiphany-browser</li>
     <li>chromium (Raspbian --> sudo apt-get install chromium)</li>
+    <li>imagemagick (Raspbian --> sudo apt-get install imagemagick) </li>
   </ul>
 </body>
 </html>
