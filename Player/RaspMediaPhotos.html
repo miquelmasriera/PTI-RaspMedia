@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>RASPMEDIA LO PETA</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script src="http://localhost:3434/socket.io/socket.io.js"></script>
+		<style>
+		.center{
+			margin: auto;
+			position: absolute;
+			top: 0px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+
+			box-shadow: 0 0 8px 2px #000;
+
+			max-width: 1280px;
+		    max-height: 720px;
+		    display: inline-block;
+		    overflow: hidden;
+		}
+		.center img {
+		    height: 100%;
+		}
+		</style>
+		<style> html { 
+		    background: url(backgroundphotos.jpg) no-repeat center center fixed; 
+		    background-size: cover;
+		    -webkit-background-size: cover;
+		    -moz-background-size: cover;
+		    -o-background-size: cover;
+	    }
+	    </style>
+	</head>
+
+	<body> 
+
+		<img src=" " id="pictureviewer" class="center">
+
+		<script>
+
+			var socket = io.connect('http://localhost:3434');
+
+			socket.on("connect", function() {
+				socket.emit("playerplaying_photo");
+			})
+
+			socket.on("changesource_photos", function (message) {
+				$("#pictureviewer").attr("src", message);
+			});
+
+			socket.on("changephoto", function (message) {
+				$("#pictureviewer").attr("src", message);
+			});
+
+		</script>
+
+	</body>
+
+</html>
