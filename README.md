@@ -3,8 +3,8 @@
 
 PTI-FIB Q2 2014
 
-
-<ul>Software installed ( Raspbian )
+Software installed ( Raspbian )
+<ul>
     <li>node.js v10.26 and the following modules (npm) :
         <ul>
             <li>express 3.5.1</li>
