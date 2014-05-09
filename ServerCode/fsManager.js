@@ -20,6 +20,11 @@ exports.creaDirectorios = function(){
                 fs.mkdir(photoDir, function(err){ 
                         if(err) // si ya existen da error
                             console.log(" ERROR al crear el directorio photos ( ya existe )");
+                        
+                        fs.mkdir( "../photos/min/", function (err){
+                            if(err) 
+                                console.log(" ERROR al crear el directorio de miniaturas ( ya existe )");
+                        });
                 });
             }
             if( files.indexOf('music') < 0   ){ 

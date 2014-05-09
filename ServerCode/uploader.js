@@ -1,6 +1,7 @@
 
 /*Importem moduls*/
 var fs = require('fs');
+var im = require("imagemagick");
 var express = require('express');
 var app = module.exports = express();
 
@@ -38,6 +39,19 @@ app.post('/upload', function ( req, res ){
             console.log( err )
             res.send( {error:"problem writting"} );
         } else {
+            if( Dir == "../photos/" ) { //si es una foto redimensiona
+                var options = {
+                    width: 200,//300,
+                    height: 200, //300,
+                    srcPath: Dir+filename,
+                    dstPath: '../photos/min/'+filename                        
+                };
+
+                im.crop( options, function ( err ) {
+                    if( err ) throw err;
+                });
+
+            }
             res.send("ok");
         }
 

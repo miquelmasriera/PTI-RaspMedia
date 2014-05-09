@@ -191,7 +191,7 @@ app.post( '/listPhotos', function ( req, res ){
             photos: []
     }
 
-    fs.readdir(photoDir, function ( err, files ){
+    fs.readdir(photoDir+"min/", function ( err, files ){
         if(err) throw err;
         var total_files = 0;
         files.forEach(function(file) {
@@ -211,39 +211,28 @@ app.post( '/listPhotos', function ( req, res ){
 
                     var jsonPhoto = { name:"",
                                     base64:"" }
-                    
-                    var options = {
-                        width: 200,//300,
-                        height: 200, //300,
-                        srcPath: photoDir+file,
-                        dstPath: '/tmp/'+file                        
-                    };
 
-                    im.crop( options, function ( err ) {
-                        if( err ) throw err;
+                    var photo = base64_encode( photoDir+"min/" +file);
+                    jsonPhoto.name = file;
+                    jsonPhoto.base64 = photo;
+                    jsonOBJ.photos.push(jsonPhoto);
+                    ++cont;
 
-                        var photo = base64_encode('/tmp/'+file);
-                        jsonPhoto.name = file;
-                        jsonPhoto.base64 = photo;
-                        jsonOBJ.photos.push(jsonPhoto);
-                        ++cont;
+                    //fs.unlinkSync( '/tmp/'+file );
 
-                        fs.unlinkSync( '/tmp/'+file );
-
-                        if ( cont == total_files ) {
-                            
-                            jsonOBJ = JSON.stringify( jsonOBJ );
-                   
-                            if ( jsonOBJ == null ) {
-                                res.writeHead( 500,'ERROR' );
-                                res.end();
-                            }
-                            else {
-                                res.writeHead( 200,{ 'Content-Type': 'application/json' });
-                                res.end( jsonOBJ+"" );
-                            }  
+                    if ( cont == total_files ) {
+                        
+                        jsonOBJ = JSON.stringify( jsonOBJ );
+               
+                        if ( jsonOBJ == null ) {
+                            res.writeHead( 500,'ERROR' );
+                            res.end();
                         }
-                    });                 
+                        else {
+                            res.writeHead( 200,{ 'Content-Type': 'application/json' });
+                            res.end( jsonOBJ+"" );
+                        }  
+                    }                 
                 }       
             }); 
         }       
