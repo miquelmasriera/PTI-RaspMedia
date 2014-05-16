@@ -12,7 +12,7 @@ Software installed ( Raspbian )
             <li>imagemagick</li>
             <li>musicmetadata</li>
             <li>omxctrl</li>
-            <li><strike>socket.io</strike><</li>
+            <li>socket.io<</li>
         </ul>
     </li>
     <li>imagemagick</li>
