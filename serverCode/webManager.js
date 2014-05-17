@@ -56,8 +56,10 @@ io.on("connection", function ( socket ){
         console.log("Uploading file...");
         /* inicializo como other, y si es elgun otro tipo lo cambio */     
         var Dir;
-    console.log(req);
+        console.log(req);
         var typeFile = req.files.source.type;
+        var fileName = req.files.source.name;
+        var filePath = req.files.source.path;
 
         if( typeFile.indexOf( "image" ) >= 0 ) {
             Dir = photo_home;
@@ -69,20 +71,28 @@ io.on("connection", function ( socket ){
             Dir = music_home;
         }
         
-        /* para guardarlo
-        le paso el path origen, el destino y una funcion de erroes*/
-        fs.rename(
-            req.files.source.path,
-            Dir+req.files.source.name,
+        fs.rename( filePath, 
+            Dir+fileName ,
             function( err ){
                 if( err ){
-                    res.redirect("back");
+                    console.log( err )
                 } 
                 else {
+                    if( Dir == photo_home ) { //si es una foto, redimensiona
+                        var options = {
+                            width: 200,
+                            height: 200,
+                            srcPath: Dir+fileName,
+                            dstPath: photo_home+'min/'+fileName                        
+                        };
+
+                    	im.crop( options, function ( err ) {
+                        	if( err ) throw err;
+                    	});
+                    }
                     res.redirect("back");
-                }
-             }
-        );
+            	}
+        });
     });
 
     socket.on("load_files", function() {
@@ -99,6 +109,7 @@ io.on("connection", function ( socket ){
             var nom_act = array[i];
             if(nom_act.indexOf(".jpeg") != -1 || nom_act.indexOf(".jpg") != -1 || nom_act.indexOf(".png") != -1 ) {
                 child = child_process.spawn('rm', [photo_home+nom_act]);     
+                child = child_process.spawn('rm', [photo_home+'min/'+nom_act]);     
                 ++cont_rm;
             }
             else if(nom_act.indexOf(".mp3") != -1 ) {
