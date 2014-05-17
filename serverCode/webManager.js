@@ -22,27 +22,27 @@ var video_home = "../videos/";
 
 
 app.get('/', function(req,res) {
-    res.sendfile('./pc.html');
+    res.sendfile('./web/pc.html');
 });
 
 app.get('/tick_icon', function(req,res) {
-    res.sendfile('./tick_icon.png');
+    res.sendfile('./web/tick_icon.png');
 });
 
 app.get('/jquery.js', function(req,res) {
-    res.sendfile('./jquery.js');
+    res.sendfile('./web/jquery.js');
 });
 
 app.get('/background', function(req,res) {
-    res.sendfile('./back2.jpg');
+    res.sendfile('./web/back2.jpg');
 });
 
 app.get('/bootstrap', function(req,res) {
-    res.sendfile('./bootstrap.css');
+    res.sendfile('./web/bootstrap.css');
 });
 
 app.get('/rasp_logo', function(req,res) {
-    res.sendfile('./smalllogo.png');
+    res.sendfile('./web/smalllogo.png');
 });
 
 var uploaded_files = [];

@@ -41,8 +41,8 @@ app.post('/upload', function ( req, res ){
         } else {
             if( Dir == photoDir ) { //si es una foto redimensiona
                 var options = {
-                    width: 200,
-                    height: 200,
+                    width: 200,//300,
+                    height: 200, //300,
                     srcPath: Dir+filename,
                     dstPath: photoDir+'min/'+filename                        
                 };
@@ -50,10 +50,14 @@ app.post('/upload', function ( req, res ){
                 im.crop( options, function ( err ) {
                     if( err ) throw err;
                 });
+
+
             }
             res.send("ok");
         }
+
     });
+
 });
 
 
