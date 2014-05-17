@@ -1,4 +1,4 @@
-<h1>PTI-RaspMedia</h1> ![alt tag]( /serverCode/smalllogo.png )
+<h1>RaspMedia</h1> ![alt tag]( /serverCode/smalllogo.png )
 
 ==================
 
