@@ -1,4 +1,5 @@
-<h1>PTI-RaspMedia</h1>
+<h1>PTI-RaspMedia</h1> ![alt tag]( /serverCode/smalllogo.png )
+
 ==================
 
 PTI-FIB Q2 2014
@@ -12,7 +13,7 @@ Software installed ( Raspbian )
             <li>imagemagick</li>
             <li>musicmetadata</li>
             <li>omxctrl</li>
-            <li><strike>socket.io</strike><</li>
+            <li>socket.io<</li>
         </ul>
     </li>
     <li>imagemagick</li>
