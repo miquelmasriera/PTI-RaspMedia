@@ -120,12 +120,12 @@ app.post( '/listMusic', function ( req, res ){
                                     res.end();
                                 }    
                             }                                   
-                    }); // parser on done
-                } // finIf son mp3                     
-            }); // forEach                    
-        } // finElse hay archivos musica
-    }); // fs readdir       
-}); // listmusic
+                    }); 
+                }                      
+            });                    
+        } 
+    });        
+}); 
 
  
 app.post('/listVideos', function(req, res){
