@@ -1,4 +1,5 @@
-<h1>PTI-RaspMedia</h1>
+<h1>PTI-RaspMedia</h1> ![alt tag]( /serverCode/smalllogo.png )
+
 ==================
 
 PTI-FIB Q2 2014
