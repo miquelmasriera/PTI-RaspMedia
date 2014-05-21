@@ -1,6 +1,4 @@
-<h1><img src="/serverCode/web/smalllogo.png" width="112.5" height="149" />  RaspMedia </h1>
-
-==================
+<h1><img src="/serverCode/web/smalllogo.png" width="78.75" height="104.3" />  RaspMedia </h1>
 
 PTI-FIB Q2 2014
 
