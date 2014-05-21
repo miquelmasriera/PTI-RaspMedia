@@ -30,5 +30,7 @@ PTI-FIB Q2 2014
     <li>xdotool</li>
 </ul>
   
-<h5>Android App</h5>
-``` /androidApp/apkfile.apk ```
+<h5>Android app</h5>
+<ul>
+    <li>AndroidApp/RaspMedia.apk</li>
+</ul>
