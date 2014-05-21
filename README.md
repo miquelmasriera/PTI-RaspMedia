@@ -27,6 +27,8 @@ PTI-FIB Q2 2014
     </li>
     <li>imagemagick</li>
     <li>ffmpeg</li>
+    <li>xdotool</li>
 </ul>
   
- 
+<h5>Android App</h5>
+``` /androidApp/apkfile.apk ```
