@@ -1,4 +1,5 @@
-<h1>RaspMedia</h1> ![alt tag]( /serverCode/web/smalllogo.png )
+<h1>RaspMedia</h1> <!---![alt tag]( /serverCode/web/smalllogo.png )-->
+<img src="/serverCode/web/smalllogo.png" width="112.5" height="149" />
 
 ==================
 
