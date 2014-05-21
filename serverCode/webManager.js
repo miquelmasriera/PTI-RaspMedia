@@ -14,35 +14,34 @@ server.listen(3434);
 
 app.use(express.bodyParser());
 
-var music_home = "../music/";
-
-var photo_home = "../photos/";
-
-var video_home = "../videos/";
+var music_home = "/home/pi/RaspMedia/music/";
+var photo_home = "/home/pi/RaspMedia/photos/";
+var video_home = "/home/pi/RaspMedia/videos/";
+var web_home = "/home/pi/RaspMedia/serverCode/web";
 
 
 app.get('/', function(req,res) {
-    res.sendfile('./web/pc.html');
+    res.sendfile(web_home + '/pc.html');
 });
 
 app.get('/tick_icon', function(req,res) {
-    res.sendfile('./web/tick_icon.png');
+    res.sendfile(web_home + '/tick_icon.png');
 });
 
 app.get('/jquery.js', function(req,res) {
-    res.sendfile('./web/jquery.js');
+    res.sendfile(web_home + '/jquery.js');
 });
 
 app.get('/background', function(req,res) {
-    res.sendfile('./web/back2.jpg');
+    res.sendfile(web_home + '/back2.jpg');
 });
 
 app.get('/bootstrap', function(req,res) {
-    res.sendfile('./web/bootstrap.css');
+    res.sendfile(web_home + '/bootstrap.css');
 });
 
 app.get('/rasp_logo', function(req,res) {
-    res.sendfile('./web/smalllogo.png');
+    res.sendfile(web_home + '/smalllogo.png');
 });
 
 var uploaded_files = [];

@@ -23,30 +23,25 @@ function sendResponse(res) {
 
 }
 
-function displayPicture(name) {
-
-    child = child_process.spawn(imagePlayer, [photoDir + name]);
-
-    /*Passats 2.5 segons, posem el reproductor en pantalla completa*/
-    setTimeout(function() {
-        child_process.spawn('xdotool', ['key', 'F11']);
-    }, 2500);
-
-}
-
 /*Funció que mostra la foto que rep com a paràmetre d'una petició post*/
 app.post('/exePhoto', function(req, res) {
     name = req.body.name;
-    displayPicture(name);    
+    child = child_process.spawn(imagePlayer, [photoDir + name]);
     sendResponse(res);
 });
 
-/*Funció que canvia la foto que s'està mostrant per pantalla*/
-//MATEM EL PROCÉS I EL LLANÇEM DE NOU. SEGUR Q ES POT FER MILLOR
-app.post('/changePhoto', function(req,res) {
-    name = req.body.name;
-    child.kill('SIGKILL');
-    displayPicture(name);
+app.post('/leftPhoto', function(req,res) {        
+    child_process.spawn('xdotool', ['key', 'Left']);
+    sendResponse(res);     
+});
+
+app.post('/rightPhoto', function(req,res) {        
+    child_process.spawn('xdotool', ['key', 'Right']);
+    sendResponse(res);     
+});
+
+app.post('/photoFullscreen', function(req,res) {
+    child_process.spawn('xdotool', ['key', 'F11']);
     sendResponse(res);     
 });
 
