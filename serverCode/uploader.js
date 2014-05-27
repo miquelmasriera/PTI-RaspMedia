@@ -16,9 +16,7 @@ app.use(express.bodyParser());
 
 app.post('/upload', function ( req, res ){
         
-    /*Control: console.log("Received file:\n" + JSON.stringify(req.files));*/
-
-    var Dir = otherDir; /*Inicialitzem com a other i si el format és reconeixible canviem el directori*/    
+    var Dir = otherDir;  
     var typeFile = req.files.source.type;
     var filename = req.files.source.name;
     var filePath = req.files.source.path;
@@ -41,8 +39,8 @@ app.post('/upload', function ( req, res ){
         } else {
             if( Dir == photoDir ) { //si es una foto redimensiona
                 var options = {
-                    width: 200,//300,
-                    height: 200, //300,
+                    width: 200,
+                    height: 200, 
                     srcPath: Dir+filename,
                     dstPath: photoDir+'min/'+filename                        
                 };
