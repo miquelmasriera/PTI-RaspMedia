@@ -51,7 +51,6 @@ io.on("connection", function ( socket ){
 
     app.post('/upload_web', function ( req, res ){
             
-        //console.log("Received file:\n" + JSON.stringify(req.files));
         console.log("Uploading file...");
         /* inicializo como other, y si es elgun otro tipo lo cambio */     
         var Dir;
