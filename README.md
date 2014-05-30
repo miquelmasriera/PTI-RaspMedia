@@ -28,6 +28,7 @@ PTI-FIB Q2 2014
     <li>imagemagick</li>
     <li>ffmpeg</li>
     <li>xdotool</li>
+    <li>Keep calm and ...</li>
 </ul>
   
 <h5>Android app</h5>
