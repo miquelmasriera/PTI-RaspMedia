@@ -3,6 +3,7 @@
 PTI-FIB Q2 2014
 
 <h5>Server</h5>
+
 <ul>
     <li>
         <strong>Raspberry Pi model B</strong><br>
