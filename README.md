@@ -9,7 +9,7 @@ PTI-FIB Q2 2014
         <strong>Raspberry Pi model B</strong><br>
     </li>
     <li>Raspbian: wheezy 2014-01-07</li>
-    <li>WiFi: usb adapter</li>
+    <li>WiFi: usb adapter (optional)</li>
     <li>hdmi</li>
     <li>overclock: high 950MHz</li>
 </ul>
